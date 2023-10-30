@@ -45,7 +45,7 @@ def create_state_space_tree(
     current_subsequence.append(sequence[index])
     create_state_space_tree(sequence, current_subsequence, index + 1)
     
-    # Backtracke it
+    # Backtrack
     current_subsequence.pop()
 
 if __name__ == "__main__":
