@@ -10,6 +10,7 @@ Functions:
 from __future__ import annotations
 from typing import Any
 
+
 def generate_all_subsequences(sequence: list[Any]) -> None:
     """Kickstarts the backtracking algorithm.
 
@@ -20,6 +21,7 @@ def generate_all_subsequences(sequence: list[Any]) -> None:
     None: Outputs all subsequences to stdout.
     """
     create_state_space_tree(sequence, [], 0)
+
 
 def create_state_space_tree(
     sequence: list[Any], current_subsequence: list[Any], index: int
@@ -40,13 +42,14 @@ def create_state_space_tree(
 
     # Exclude current element
     create_state_space_tree(sequence, current_subsequence, index + 1)
-    
+
     # Include current element
     current_subsequence.append(sequence[index])
     create_state_space_tree(sequence, current_subsequence, index + 1)
-    
+
     # Backtrack
     current_subsequence.pop()
+
 
 if __name__ == "__main__":
     seq: list[Any] = [3, 1, 2, 4]
