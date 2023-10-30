@@ -1,5 +1,8 @@
 from unittest.mock import Mock, patch  # Import Mock and patch from unittest.mock module
-from file_transfer.send_file import send_file  # Import send_file function from your module
+from file_transfer.send_file import (
+    send_file,
+)  # Import send_file function from your module
+
 
 # Use the patch decorator to mock the socket and open built-ins
 @patch("socket.socket")
@@ -7,11 +10,11 @@ from file_transfer.send_file import send_file  # Import send_file function from 
 def test_send_file_running_as_expected(file, sock):
     """
     Test to ensure the send_file function behaves as expected.
-    
+
     Parameters:
     - file (Mock): Mock object representing the file being sent
     - sock (Mock): Mock object representing the socket connection
-    
+
     """
 
     # ===== Initialization =====
